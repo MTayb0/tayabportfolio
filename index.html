@@ -139,21 +139,7 @@ html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" co
 
 
          <!--tayab end here -->
-    <script>progressJs().setOptions({overlayMode: true, theme: 'custom'}).start();
-      if(window.attachEvent) {
-          window.attachEvent('onload', function(){ progressJs().end(); });
-      } else {
-          if(window.onload) {
-              var curronload = window.onload;
-              var newonload = function() {
-                  curronload();
-                  progressJs().end();
-              };
-              window.onload = newonload;
-          } else {
-              window.onload = function(){ progressJs().end(); };
-          }
-      }</script>  <!-- Header-->
+  <!-- Header-->
       
 
 <header class="main-header">
@@ -315,262 +301,32 @@ html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" co
                                                      <Projects section
                                                      <section class="common-section" id="projects"><header class="common-section__header">
                                                         <h2>Automation videos</h2></header>
+<div class="video-grid">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/YSxxZO33p6I" title="Video 1" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/k3IiDCSm40Q" title="Video 2" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/Sx9f2enirjs" title="Video 3" allowfullscreen></iframe>
+  </div>
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/duaV9oEMXS0" title="Video 4" allowfullscreen></iframe>
+  </div>
+</div>
+<div class="video-grid">
+  <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/4gVirORhj_g" title="Video 1" allowfullscreen></iframe>
+  </div>
+    <div class="video-wrapper">
+    <iframe src="https://www.youtube.com/embed/LPfCdKU8FR4" title="Video 1" allowfullscreen></iframe>
+  </div>
+ 
+</div>
+
                                                        
-                                                     <div class="projects-wrap"><div class="grid-container"><div class="projects">
-                                                   <div class="projects__item">
-  <figure class="video-container">
-    <video id="smartLightsVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/smart lights.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">Smart Lights Automation Project</a>
-      <button onclick="enablePiP('smartLightsVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // Your enablePiP JavaScript function here (as provided previously)
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP:', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP:', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-
-<div class="projects__item">
-  <figure class="video-container">
-    <video id="outdoorLightsVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/outdoor lights.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">Outdoor Lights Project</a>
-      <button onclick="enablePiP('outdoorLightsVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // This JavaScript function handles Picture-in-Picture for any video ID passed to it.
-  // It's placed here with the video for demonstration, but typically, you'd define it once
-  // at the end of your <body> or in a separate .js file for better organization.
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP (after play):', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP (already playing):', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-<div class="projects__item">
-  <figure class="video-container">
-    <video id="knxBoxVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/knx box.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">KNX Box Integration</a>
-      <button onclick="enablePiP('knxBoxVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // This JavaScript function handles Picture-in-Picture for any video ID passed to it.
-  // As noted before, in a full project, you typically define this function once.
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP (after play):', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP (already playing):', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-
-<div class="projects__item">
-  <figure class="video-container">
-    <video id="gateMotorVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/gate motor.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">Automatic Gate Motor System</a>
-      <button onclick="enablePiP('gateMotorVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // This JavaScript function handles Picture-in-Picture for any video ID passed to it.
-  // As noted before, in a full project, you typically define this function once.
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP (after play):', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP (already playing):', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-<div class="projects__item">
-  <figure class="video-container">
-    <video id="curtainsVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/curtains.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">Automated Curtains System</a>
-      <button onclick="enablePiP('curtainsVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // This JavaScript function handles Picture-in-Picture for any video ID passed to it.
-  // As noted before, in a full project, you typically define this function once.
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP (after play):', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP (already playing):', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-<div class="projects__item">
-  <figure class="video-container">
-    <video id="dmxLightsVideo" class="projects__video" autoplay muted loop playsinline controls>
-      <source src="static/images/projects/DMX Lights.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <figcaption class="video-overlay">
-      <a class="icon icon_link" href="#" rel="nofollow">DMX Lights System</a>
-      <button onclick="enablePiP('dmxLightsVideo')" class="pip-button">Play in Picture-in-Picture</button>
-    </figcaption>
-  </figure>
-</div>
-
-<script>
-  // This JavaScript function handles Picture-in-Picture for any video ID passed to it.
-  // As noted before, in a full project, you typically define this function once.
-  function enablePiP(videoId) {
-    const video = document.getElementById(videoId);
-    if (document.pictureInPictureEnabled && !video.disablePictureinPicture) {
-      if (document.pictureInPictureElement) {
-        document.exitPictureInPicture();
-      } else {
-        if (video.paused) {
-          video.play().then(() => {
-            video.requestPictureInPicture().catch(error => {
-              console.error('Error enabling PiP (after play):', error);
-            });
-          }).catch(error => {
-            console.error('Error playing video for PiP:', error);
-          });
-        } else {
-          video.requestPictureInPicture().catch(error => {
-            console.error('Error enabling PiP (already playing):', error);
-          });
-        }
-      }
-    } else {
-      alert("Picture-in-Picture not supported in this browser or disabled for this video.");
-    }
-  }
-</script>
-
-
-
-
-
-                                                      </div></div></div></section>
+                                              </section>
                                                                              
                                                                                 
                                                                                 
